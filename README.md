@@ -50,3 +50,23 @@ The model expects input data in the following format (example):
 {
     Input : np.array([O₁, H₁, L₁, C₁, O₂, H₂, L₂, C₂, "ema5", "ema20", "ema50", "adx"])
 }
+```
+
+```python
+# Sample code to use the trained model
+import joblib
+import numpy as np
+
+# Load the trained model
+model = joblib.load('Sell_Random_Forest_Regression_Model_with_adx.pkl')
+
+# Prepare input data
+input_data = [42000.0, 42150.0, 41980.0, 42120.0, 42120.0, 42230.0, 42050.0, 42180.0, 42156.78, 42023.45, 41876.32, 28.3]
+
+# Convert to model input format
+features = np.array(input_data)
+
+# Make prediction
+prediction = model.predict(features)
+print(f"Trade Signal: {prediction[0]}")
+```
