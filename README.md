@@ -7,16 +7,13 @@ This project uses a trained **Random Forest Regressor** model to predict the **s
 ## 📌 Requirements
 
 - Python 3.7+
-- pandas
-- scikit-learn
-- ta
+- numpy
 - joblib
-- python-binance
 
 Install all dependencies using:
 
 ```bash
-pip install pandas scikit-learn ta joblib python-binance
+pip install numpy joblib
 ```
 ## Input Requirements
 The model requires the following input features for prediction:
@@ -46,9 +43,9 @@ The model requires the following input features for prediction:
 ## Data Format
 The model expects input data in the following format (example):
 
-```json
+```python
 {
-    Input : np.array([O₁, H₁, L₁, C₁, O₂, H₂, L₂, C₂, "ema5", "ema20", "ema50", "adx"])
+    Input : np.array([O₁, H₁, L₁, C₁, O₂, H₂, L₂, C₂, ema5, ema20, ema50, adx])
 }
 ```
 
