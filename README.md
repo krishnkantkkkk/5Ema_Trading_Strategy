@@ -61,7 +61,7 @@ model = joblib.load('Sell_Random_Forest_Regression_Model_with_adx.pkl')
 input_data = [42000.0, 42150.0, 41980.0, 42120.0, 42120.0, 42230.0, 42050.0, 42180.0, 42156.78, 42023.45, 41876.32, 28.3]
 
 # Convert to model input format
-features = np.array(input_data)
+features = np.array([input_data]) # Don't forget to add one extra square bracket
 
 # Make prediction
 prediction = model.predict(features)
